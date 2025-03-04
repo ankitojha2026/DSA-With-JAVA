@@ -3,6 +3,7 @@ package hashmap;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MergeTwoArrayLeetCode2570 {
     public static void main(String[] args) {
@@ -32,7 +33,8 @@ public class MergeTwoArrayLeetCode2570 {
         int [][]ans=new int[map.size()][2];
 
         int j=0;
-        for (Map.Entry<Integer, Integer> i : map.entrySet())
+        TreeMap<Integer, Integer> sortedMap = new TreeMap<>(map);
+        for (Map.Entry<Integer, Integer> i : sortedMap.entrySet())
         {
             ans[j][0]=i.getKey();
             ans[j][1]=i.getValue();
