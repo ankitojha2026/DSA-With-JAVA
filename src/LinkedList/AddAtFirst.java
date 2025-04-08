@@ -21,8 +21,8 @@ public class AddAtFirst {
                 Node newNode= new Node(data);
                 if(head==null)
                 {
-                    head=newNode;
-                    tail =newNode;
+                    newNode.next=head;
+                    head =newNode;
                 }
                 else
                 {
