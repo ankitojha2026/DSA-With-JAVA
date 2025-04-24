@@ -22,6 +22,7 @@ public class ReverseList {
             if (head == null) {
                 newNode.next = head;
                 head = newNode;
+                tail=newNode;
             } else {
                 newNode.next = head;
                 head = newNode;
@@ -36,37 +37,65 @@ public class ReverseList {
             }
         }
 
-        void reverse(Node head)
+
+        void InsertAtEnd(int data)
         {
+            Node newNode=new Node(data);
+            if(head==null)
+            {
+                head=newNode;
+                tail=newNode;
+            }
+            else{
+                tail.next=newNode;
+                tail=newNode;
+            }
 
-         Node prev=null;
-         Node current=head;
-         while(current!=null)
-         {
-             Node next_node=current.next;
+        }
 
-         }
+        void divide()
+        {
+            Node temp=head;
+            head=null;
 
+
+            while(temp!=null) {
+                Node x=temp;
+                temp=temp.next;
+                x.next=null;
+                addAtFirst(x.data);
+
+            }
+        }
+
+
+        void reverse()
+        {
+            Node prev=null;
+            Node current=head;
+            while(current!=null)
+            {
+               Node next_node= current.next;
+               current.next=prev;
+               prev=current;
+               current=next_node;
+               head=prev;
+
+            }
         }
 
 
 
+    } public static void main(String[] args) {
 
-    }
-
-
-
-
-
-        public static void main(String[] args) {
-
-        Linkedlist l=new
-                Linkedlist();
-        l.addAtFirst(10);
-        l.addAtFirst(20);
-        l.addAtFirst(30);
-        l.addAtFirst(40);
-            System.out.println(l.head.data);
-l.reverse(l.head);
+        Linkedlist l=new Linkedlist();
+        l.InsertAtEnd(12);
+        l.InsertAtEnd(13);
+        l.InsertAtEnd(14);
+        l.InsertAtEnd(15);
+        l.print();
+        System.out.println();
+        l.reverse();
+        l.print();
     }
 }
