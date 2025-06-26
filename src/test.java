@@ -27,10 +27,6 @@ class test{
         {
             System.out.println(Character.getNumericValue(ans.charAt(i)));
         }
-
-
-
-
     }
     public static void main(String[] args) {
 int arr1[]={1,2,3,4,5,6,7},arr2[]={1,2,3,4,5,67,8};
